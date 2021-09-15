@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="https://cdn.staticfile.org/vue/2.6.9/vue.min.js"></script>
+    <title>Title</title>
+</head>
+<body>
+<div id="app">
+    循环
+    <li v-for="(item,index) in items">
+        {{item.message}}--{{index}}
+    </li>
+
+</div>
+
+</body>
+<script>
+    let vm = new Vue({
+            el: "#app",
+            data: {
+                items: [
+                    {message: 'x'},
+                    {message: 'y'},
+                    {message: 'z'},
+                ]
+
+            },
+
+        }
+    )
+</script>
+</html>

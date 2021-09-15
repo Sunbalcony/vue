@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="https://cdn.staticfile.org/vue/2.6.9/vue.min.js"></script>
+    <title>Title</title>
+</head>
+<body>
+<div id="app">
+    事件
+    {{message}}
+    <button v-on:click="sayHi">button click me sayHi func</button>
+    <button v-on:click="testFunc">button click me testFunc</button>
+
+</div>
+
+</body>
+<script>
+    let vm = new Vue({
+            el: "#app",
+            data: {
+                message: '',
+            },
+            //方法必须定义到Vue的method对象中,事件需要监听，也就是event
+            methods: {
+                sayHi: function (event) {
+                    this.message = "hello sayHi"
+                },
+                testFunc() {
+                    this.message = "hello testFunc"
+                },
+
+            },
+
+        }
+    )
+</script>
+</html>

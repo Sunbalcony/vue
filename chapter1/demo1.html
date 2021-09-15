@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="https://cdn.staticfile.org/vue/2.6.9/vue.min.js"></script>
+    <title>Title</title>
+</head>
+<body>
+<div id="app">
+    {{ message }}
+    <span v-bind:title="message">鼠标悬浮显示,指令带有前缀v-，表示他们是Vue提供的特殊属性。可能你们已经猜到了，他们会渲染DOM上应用特殊的响应式行为</span>
+</div>
+
+</body>
+<script>
+    let vue = new Vue({
+            //绑定
+            el: "#app",
+            data: {
+                message: "hello"
+            },
+
+        }
+    )
+</script>
+</html>
