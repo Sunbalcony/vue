@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="https://cdn.staticfile.org/vue/2.6.9/vue.min.js"></script>
+    <title>Title</title>
+</head>
+<body style="margin: 30px">
+<div id="app">
+    双向数据绑定 v-model <br>
+    输入的文本<input type="text" v-model="message"/>{{message}}
+
+
+    ------
+    性别
+    <input type="radio" name="sex" value="男" v-model="checked">男
+    <input type="radio" name="sex" value="女" v-model="checked">女
+
+    选中了谁: {{checked}}
+    <br>
+    选择框
+    <select name="" id="" v-model="selected">
+        <option value="" disabled>请选择</option>
+        <option >A</option>
+        <option >B</option>
+        <option >C</option>
+    </select>
+    <span> select value is: {{selected}}</span>
+
+
+</div>
+
+</body>
+<script>
+    let vm = new Vue({
+            el: "#app",
+            data: {
+                message: '',
+                checked: false,
+                selected: '',
+            },
+            //方法必须定义到Vue的method对象中,事件需要监听，也就是event
+            methods: {},
+
+        }
+    )
+</script>
+</html>

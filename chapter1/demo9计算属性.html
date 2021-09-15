@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="https://cdn.staticfile.org/vue/2.6.9/vue.min.js"></script>
+    <!--    axios javascript-->
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+
+    <title>Title</title>
+</head>
+<body style="margin: 30px">
+<div id="app">
+    计算属性：计算出的结果，保存在属性中
+    <p> method current time is :{{currentTime()}}</p>
+    <p>computed current time is :{{currentTimeComputed}}</p>
+</div>
+
+</body>
+<script>
+    let vm = new Vue({
+            el: "#app",
+            data: { //data 属性 vm
+                message: 'hello github',
+            },
+            //方法必须定义到Vue的method对象中,事件需要监听，也就是event
+            mounted() {
+            },
+            methods: {
+                currentTime: function (event) {
+                    return Date.now(); //返回一个时间戳
+                }
+            },
+            //计算属性
+            computed: { //计算属性  methods和computed的方法不能重名，重名之后只会调用methods中的方法
+                currentTimeComputed: function () {
+                    //虚拟DOM，失效后会重新计算，在内存中。可以想象为缓存
+                    return Date.now(); //返回一个时间戳
+                }
+
+            }
+
+
+        }
+    )
+</script>
+</html>

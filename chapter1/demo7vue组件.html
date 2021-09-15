@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="https://cdn.staticfile.org/vue/2.6.9/vue.min.js"></script>
+    <title>Title</title>
+</head>
+<body style="margin: 30px">
+<div id="app">
+    传递给组件的值，要通过props
+    <name v-for="item in items" v-bind:qin="item"></name>
+    和Vue Component挂钩
+
+</div>
+
+</body>
+<script>
+    //定义一个Vue组件component
+    Vue.component("name", {
+        props: ['qin'],
+        template: '<li>{{qin}}</li>'
+
+    })
+    let vm = new Vue({
+            el: "#app",
+            data: {
+                items: ["golang", "linux", "front"]
+            },
+            //方法必须定义到Vue的method对象中,事件需要监听，也就是event
+            methods: {},
+
+        }
+    )
+</script>
+</html>
